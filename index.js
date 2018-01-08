@@ -5,7 +5,7 @@ const preferSpacing = require('./rules/prefer-spacing');
 module.exports = {
   configs: {
     recommended: {
-      plugins: ['jest'],
+      plugins: ['pangu'],
       rules: {
         'pangu/prefer-spacing': 'error',
       },
