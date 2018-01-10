@@ -4,7 +4,8 @@
   "description": "Eslint rules for whitespaces between CJK and half-width characters",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "eslint",

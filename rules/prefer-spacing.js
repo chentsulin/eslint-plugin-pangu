@@ -7,7 +7,14 @@ module.exports = context => {
     Literal(node) {
       if (typeof node.value === 'string') {
         const raw = node.raw;
-        const spaced = pangu.spacing(node.raw);
+        const spaced = JSON.stringify(
+          JSON.parse(node.raw)
+            .split('\n')
+            .map(l => pangu.spacing(l).trim())
+            .join('\n')
+        );
+
+        console.log({ raw, spaced });
 
         if (spaced !== raw) {
           context.report({
