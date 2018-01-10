@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-pangu",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Eslint rules for whitespaces between CJK and half-width characters",
   "main": "index.js",
   "scripts": {
