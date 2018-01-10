@@ -14,8 +14,6 @@ module.exports = context => {
             .join('\n')
         );
 
-        console.log({ raw, spaced });
-
         if (spaced !== raw) {
           context.report({
             node,
