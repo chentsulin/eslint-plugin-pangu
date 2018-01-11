@@ -1,6 +1,7 @@
 # eslint-plugin-pangu
 
 [![npm](https://img.shields.io/npm/v/eslint-plugin-pangu.svg?style=flat-square)](https://www.npmjs.com/package/eslint-plugin-pangu)
+[![build](https://travis-ci.org/chentsulin/eslint-plugin-pangu.svg?branch=master)](https://travis-ci.org/chentsulin/eslint-plugin-pangu)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation
