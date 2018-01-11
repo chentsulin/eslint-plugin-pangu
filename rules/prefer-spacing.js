@@ -2,9 +2,19 @@
 
 const pangu = require('pangu');
 
+function isImport(node) {
+  return node.type === 'ImportDeclaration';
+}
+
+function isRequire(node) {
+  return node.type === 'CallExpression' && node.callee.name === 'require';
+}
+
 module.exports = context => {
   return {
     Literal(node) {
+      if (isImport(node.parent) || isRequire(node.parent)) return;
+
       if (typeof node.value === 'string') {
         const raw = node.raw;
         let quote = raw[0];
