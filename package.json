@@ -1,22 +1,47 @@
 {
   "name": "eslint-plugin-pangu",
-  "version": "0.1.4",
   "description": "Eslint rules for whitespaces between CJK and half-width characters",
+  "license": "MIT",
+  "version": "0.1.4",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "precommit": "lint-staged",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:staged": "lint-staged",
+    "test": "npm run lint:fix && npm run testonly",
+    "testonly": "jest",
+    "testonly:cov": "jest --coverage --runInBand --forceExit",
+    "testonly:watch": "jest --watch",
+    "preversion": "npm test"
   },
-  "keywords": [
-    "eslint",
-    "pangu"
-  ],
-  "license": "MIT",
   "dependencies": {
     "pangu": "^3.3.0"
   },
   "devDependencies": {
     "eslint": "^4.15.0",
-    "jest": "^22.0.4"
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-prettier": "^2.4.0",
+    "husky": "^0.14.3",
+    "jest": "^22.0.4",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.10.2",
+    "prettier-package-json": "^1.4.0"
+  },
+  "keywords": [
+    "eslint",
+    "pangu"
+  ],
+  "lint-staged": {
+    "package.json": [
+      "prettier-package-json --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
