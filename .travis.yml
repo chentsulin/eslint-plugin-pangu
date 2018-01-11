@@ -8,8 +8,9 @@ cache:
   directories:
     - "node_modules"
 script:
+  - npm install codecov
   - npm run lint
-  - npm run testonly:cov
+  - npm run testonly:cov -- --no-cache --colors && ./node_modules/.bin/codecov
 
 notifications:
   email:
